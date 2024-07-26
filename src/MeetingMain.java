@@ -2,9 +2,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class MeetingMain {
     public static void main(String[] args) {
         Meeting meeting1 = new Meeting("Petrov", "Smirnov", LocalDateTime.of(2024, 8, 30, 14, 0));
@@ -19,10 +16,14 @@ public class MeetingMain {
         List<Integer> meetingStartTime = meetingList.stream()
                 .map(Meeting::getLocalDateTime)
                 .map(LocalDateTime::getHour)
-                .reduce((x, y) -> x + y)
-                .map(x -> x / 3)
+                .reduce(Integer::sum)
+                .map(x->x/meetingList.size())
                 .stream().toList();
-        System.out.println("Cреднее время начала встреч " + meetingStartTime);
+
+
+        System.out.println("Среднее время начала встреч" + meetingStartTime + " часов");
+
+
 
     }
 
