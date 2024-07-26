@@ -21,7 +21,7 @@ public class MeetingMain {
                 .stream().toList();
 
 
-        System.out.println("Среднее время начала встреч" + meetingStartTime + " часов");
+        System.out.println("Среднее время начала встреч в " + meetingStartTime + " часов");
 
 
 
