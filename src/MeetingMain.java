@@ -1,6 +1,8 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 
 public class MeetingMain {
     public static void main(String[] args) {
@@ -13,15 +15,17 @@ public class MeetingMain {
         meetingList.add(meeting2);
         meetingList.add(meeting3);
 
-        List<Integer> meetingStartTime = meetingList.stream()
+        Optional<Integer> meetingStartTime = meetingList.stream()
                 .map(Meeting::getLocalDateTime)
                 .map(LocalDateTime::getHour)
                 .reduce(Integer::sum)
-                .map(x->x/meetingList.size())
-                .stream().toList();
+                .map(x->x/meetingList.size());
+
+        int result = (meetingStartTime.get());
 
 
-        System.out.println("Среднее время начала встреч в " + meetingStartTime + " часов");
+
+        System.out.printf("Среднее время начала встреч в %d  часов ", result );
 
 
 
