@@ -26,6 +26,6 @@ public class PackageMain {
            .filter((p ->p.getCityOfReceipt().equalsIgnoreCase("Berlin")))
            .max(Comparator.comparing(Package-> Package.getZonedDateTime()))
            .orElse(null);
-        System.out.println("Самая новая посылка на Берлин - " + newPackageToBerlin);
+        System.out.printf("Самая новая посылка на Берлин -  %s  ", newPackageToBerlin);
     }
 }

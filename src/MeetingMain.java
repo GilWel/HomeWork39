@@ -19,18 +19,11 @@ public class MeetingMain {
                 .map(Meeting::getLocalDateTime)
                 .map(LocalDateTime::getHour)
                 .reduce(Integer::sum)
-                .map(x->x/meetingList.size());
+                .map(x -> x / meetingList.size());
 
         int result = (meetingStartTime.get());
 
-
-
-        System.out.printf("Среднее время начала встреч в %d  часов ", result );
-
-
-
+        System.out.printf("Среднее время начала встреч в %d  часов ", result);
     }
-
-
 }
 
