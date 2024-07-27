@@ -23,7 +23,7 @@ public class PackageMain {
         packageList.add(new Package("Montevideo", "Berlin", 15.6,  (zonedDateTime.withZoneSameInstant(ZoneId.of("America/Montevideo")))));
 
    Package newPackageToBerlin =packageList.stream()
-           .filter((p ->p.getCityOfReceipt().equalsIgnoreCase("Berlin")))
+           .filter((p ->p.getCityOfReceipt().equals("Berlin")))
            .max(Comparator.comparing(Package-> Package.getZonedDateTime()))
            .orElse(null);
         System.out.printf("Самая новая посылка на Берлин -  %s  ", newPackageToBerlin);
